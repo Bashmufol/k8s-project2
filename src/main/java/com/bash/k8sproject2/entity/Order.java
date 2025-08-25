@@ -12,5 +12,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    private int customerId;
+    private float price;
+    private int quantity;
 }
