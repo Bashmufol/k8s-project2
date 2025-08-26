@@ -1,6 +1,6 @@
 # Define a 'Persistent Volume Claim' (PVC) for Mysql storage, dynamically provisioned cluster
 
-apiVersion: apps/v1
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim     # name of PVC, essentail for identifying the storage data
