@@ -39,8 +39,6 @@ spec:
     spec:
       containers:
         - image: mysql:8.0
-          args:
-            - "--ignore-db-dir=lost+found" # workaround for gitHub
           name: mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
