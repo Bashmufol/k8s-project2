@@ -15,7 +15,7 @@ spec:
       initContainers:
         - name: check-db-ready
           image: busybox
-          command: [ 'sh', '-c', 'until nslookup mysql; do echo waiting for mysql; sleep 2; done;' ]
+          command: ['sh', '-c', 'until nc -zvw3 mysql 3306; do echo waiting for mysql; sleep 2; done;']
       containers:
         - name: springboot-crud-k8s
           image: k8s-project2:v1
