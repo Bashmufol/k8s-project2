@@ -23,13 +23,29 @@ spec:
             - containerPort: 8080
           env:
             - name: DB_HOST
-              value: mysql
+#              value:
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: host
             - name: DB_NAME
-              value: javatechie
+#              value: javatechie
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: dbName
             - name: DB_USERNAME
-              value: root
+#              value:
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: username
             - name: DB_PASSWORD
-              value: root
+#              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: password
 
 ---
 
